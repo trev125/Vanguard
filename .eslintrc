@@ -1,0 +1,13 @@
+{
+	"extends": ["@navinc/eslint-config"],
+	"rules": {
+		"react/jsx-uses-react": "off",
+		"react/react-in-jsx-scope": "off",
+		"react/jsx-no-target-blank": "off", // This is handled in BRC, but eslint doesn't know that
+		"chai-friendly/no-unused-expressions": "off" // Not using this right now
+		// "jsx-a11y/no-autofocus": 1
+	},
+	"parserOptions": {
+		"requireConfigFile": false
+	}
+}

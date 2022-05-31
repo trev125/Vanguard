@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import SearchBar from "./components/search";
+import NewUserPopUp from "./components/newUser";
+import DailyQuestion from "./components/dailyQuestion";
+
+const movies = require("./data/testMovies.json");
+const movieResults = movies.results;
+const movieTitles = [];
+movieResults.forEach((movie) => {
+  movieTitles.push({
+    value: movie.original_title,
+    label: movie.original_title,
+    key: movie.id,
+  });
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NewUserPopUp />
+      <DailyQuestion />
+      <SearchBar options={movieTitles} />
+    </>
   );
 }
 
